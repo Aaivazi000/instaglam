@@ -11,12 +11,12 @@
 		94419D319905828317CCAEB2 /* Pods_InstaglamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AB800153398676B5F785FB /* Pods_InstaglamTests.framework */; };
 		DA97DC01009623EC1CD5429D /* Pods_InstaglamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BEE8F0CC48C6087ED4A50C /* Pods_InstaglamUITests.framework */; };
 		E650FB79217A7C9100D5DC40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650FB78217A7C9100D5DC40 /* AppDelegate.swift */; };
-		E650FB7B217A7C9100D5DC40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650FB7A217A7C9100D5DC40 /* ViewController.swift */; };
 		E650FB7E217A7C9100D5DC40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E650FB7C217A7C9100D5DC40 /* Main.storyboard */; };
 		E650FB80217A7C9200D5DC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E650FB7F217A7C9200D5DC40 /* Assets.xcassets */; };
 		E650FB83217A7C9200D5DC40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E650FB81217A7C9200D5DC40 /* LaunchScreen.storyboard */; };
 		E650FB8E217A7C9200D5DC40 /* InstaglamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650FB8D217A7C9200D5DC40 /* InstaglamTests.swift */; };
 		E650FB99217A7C9200D5DC40 /* InstaglamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650FB98217A7C9200D5DC40 /* InstaglamUITests.swift */; };
+		E6DF212E217BDC2300835A67 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF212D217BDC2300835A67 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		C7C96D8668E13BA7E8AFF7AD /* Pods-Instaglam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaglam.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instaglam/Pods-Instaglam.release.xcconfig"; sourceTree = "<group>"; };
 		E650FB75217A7C9100D5DC40 /* Instaglam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaglam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E650FB78217A7C9100D5DC40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E650FB7A217A7C9100D5DC40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E650FB7D217A7C9100D5DC40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E650FB7F217A7C9200D5DC40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E650FB82217A7C9200D5DC40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		E650FB94217A7C9200D5DC40 /* InstaglamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaglamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E650FB98217A7C9200D5DC40 /* InstaglamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaglamUITests.swift; sourceTree = "<group>"; };
 		E650FB9A217A7C9300D5DC40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6DF212D217BDC2300835A67 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED7CB9EB2BA6B4C09E9EA857 /* Pods-InstaglamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaglamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaglamUITests/Pods-InstaglamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,11 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				E650FB78217A7C9100D5DC40 /* AppDelegate.swift */,
-				E650FB7A217A7C9100D5DC40 /* ViewController.swift */,
 				E650FB7C217A7C9100D5DC40 /* Main.storyboard */,
 				E650FB7F217A7C9200D5DC40 /* Assets.xcassets */,
 				E650FB81217A7C9200D5DC40 /* LaunchScreen.storyboard */,
 				E650FB84217A7C9200D5DC40 /* Info.plist */,
+				E6DF212D217BDC2300835A67 /* LoginViewController.swift */,
 			);
 			path = Instaglam;
 			sourceTree = "<group>";
@@ -393,7 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E650FB7B217A7C9100D5DC40 /* ViewController.swift in Sources */,
+				E6DF212E217BDC2300835A67 /* LoginViewController.swift in Sources */,
 				E650FB79217A7C9100D5DC40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
