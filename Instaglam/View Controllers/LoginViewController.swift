@@ -9,23 +9,42 @@
 import UIKit
 import Parse
 
-
 class LoginViewController: UIViewController {
     
     // UI Outlets & Variable Declarations
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // Close keyboard when user taps on view
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     //Log in Button Action
     @IBAction func onlogin(_ sender: Any) {
         //When Log In is clicked do...
+        
+        //Take Log in info from fields and sign up.
+        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) -> Void in
+            
+            //Check if something went wrong w/log in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else if user != nil {
+                print("You are logged in")
+                
+                //Segue to next controller
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+        }
+        
         
     }
     
     //Sign Up Button Action
     @IBAction func onsignup(_ sender: Any) {
         //When Sign Up is clicked do...
-        
         // initialize a user object
         let newUser = PFUser()
         
@@ -43,15 +62,16 @@ class LoginViewController: UIViewController {
                 }
                 if (error._code == 200) || (error._code == 201)  {
                     //Alert that something is missing
-                    print("Please check the username and password fields. One or more is missing")
+                    print("Please check the username and password fields. One or more is empty.")
                 }
             }
             else {
                 print("User Registered successfully")
-                // manually segue to logged in view
+                
+                //Segue to next controller
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
-        
     }
     
     
