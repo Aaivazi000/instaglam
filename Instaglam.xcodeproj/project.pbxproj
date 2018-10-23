@@ -19,6 +19,7 @@
 		E6583362217E77BA00D7B579 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6583361217E77BA00D7B579 /* FeedViewController.swift */; };
 		E6583365217E836C00D7B579 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6583364217E836C00D7B579 /* ProfileViewController.swift */; };
 		E6583367217E838300D7B579 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6583366217E838300D7B579 /* CaptureViewController.swift */; };
+		E6583369217EBE1100D7B579 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6583368217EBE1100D7B579 /* Post.swift */; };
 		E6DF212E217BDC2300835A67 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF212D217BDC2300835A67 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		E6583361217E77BA00D7B579 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E6583364217E836C00D7B579 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E6583366217E838300D7B579 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		E6583368217EBE1100D7B579 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E6DF212D217BDC2300835A67 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED7CB9EB2BA6B4C09E9EA857 /* Pods-InstaglamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaglamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaglamUITests/Pods-InstaglamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 				E650FB7F217A7C9200D5DC40 /* Assets.xcassets */,
 				E650FB81217A7C9200D5DC40 /* LaunchScreen.storyboard */,
 				E650FB84217A7C9200D5DC40 /* Info.plist */,
+				E6583368217EBE1100D7B579 /* Post.swift */,
 			);
 			path = Instaglam;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				E6DF212E217BDC2300835A67 /* LoginViewController.swift in Sources */,
 				E6583362217E77BA00D7B579 /* FeedViewController.swift in Sources */,
 				E6583365217E836C00D7B579 /* ProfileViewController.swift in Sources */,
+				E6583369217EBE1100D7B579 /* Post.swift in Sources */,
 				E650FB79217A7C9100D5DC40 /* AppDelegate.swift in Sources */,
 				E6583367217E838300D7B579 /* CaptureViewController.swift in Sources */,
 			);
