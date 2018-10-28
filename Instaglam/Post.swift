@@ -10,21 +10,19 @@ import UIKit
 import Parse
 
 class Post: PFObject, PFSubclassing {
-    
-    //Declarations
     @NSManaged var media : PFFile
     @NSManaged var author: PFUser
     @NSManaged var caption: String
     @NSManaged var likesCount: Int
     @NSManaged var commentsCount: Int
     
-    //Required to add PFSubclassing to class
-    static func parseClassName() -> String {
+    /* Needed to implement PFSubclassing interface */
+    class func parseClassName() -> String {
         return "Post"
     }
     
     /**
-     * Insert Other methods
+     * Other methods
      */
     
     /**
@@ -39,14 +37,14 @@ class Post: PFObject, PFSubclassing {
         let post = Post()
         
         // Add relevant fields to the object
-        post.media = getPFFileFromImage(image) // PFFile column type
-        post.author = PFUser.current() // Pointer column type that points to PFUser
-        post.caption = caption
+        post.media = getPFFileFromImage(image: image)! // PFFile column type
+        post.author = PFUser.current()! // Pointer column type that points to PFUser
+        post.caption = caption!
         post.likesCount = 0
         post.commentsCount = 0
         
         // Save object (following function will save the object in Parse asynchronously)
-        post.saveInBackgroundWithBlock(completion)
+        post.saveInBackground(block: completion)
     }
     
     /**
@@ -60,12 +58,10 @@ class Post: PFObject, PFSubclassing {
         // check if image is not nil
         if let image = image {
             // get image data and check if that is not nil
-            if let imageData = UIImagePNGRepresentation(image) {
+            if let imageData = image.pngData() {
                 return PFFile(name: "image.png", data: imageData)
             }
         }
         return nil
     }
-    
-
 }

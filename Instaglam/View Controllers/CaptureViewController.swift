@@ -13,7 +13,24 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     //Declarations and UI Outlets
     @IBOutlet weak var postImageView: UIImageView!
     var selectedforpostUIImage: UIImage?
+    @IBOutlet weak var captionTextField: UITextField!
+    var alertController = UIAlertController()
     
+    
+    //Resize Photo Function
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIView.ContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+
     
     //Action when postImageView is tapped
     @IBAction func onimageTap(_ sender: Any) {
@@ -59,8 +76,41 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         //Take image in UI Image View and set to var
         selectedforpostUIImage = postImageView.image
         
-        //Check if photo size is under 10MB and reduce if necessary
-        
+        //Create a post
+        var caption = captionTextField.text
+        if caption == "Add Caption Here" {
+            caption = "No Caption"
+        }
+        Post.postUserImage(image: selectedforpostUIImage, withCaption: caption) { (success: Bool, error: Error?) -> Void in
+            
+            if let error = error {
+                if self.postImageView.image == #imageLiteral(resourceName: "image_placeholder") {
+                    self.alertController = UIAlertController(title: "Error", message: "\(String(describing: error.localizedDescription))", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "Ok", style: .cancel) {(action) in
+                        //doing nothing will dismiss view
+                    }
+                    self.alertController.addAction(cancelAction)
+                    DispatchQueue.global().async(execute: {
+                        DispatchQueue.main.sync{
+                            self.present(self.alertController, animated: true, completion: nil)
+                        }
+                    })
+                }
+            }
+            else {
+                self.alertController = UIAlertController(title: "Success", message: "You have shared a new post!", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                    //do nothing to dismiss
+                }
+                self.alertController.addAction(cancelAction)
+                DispatchQueue.global().async(execute: {
+                    DispatchQueue.main.sync{
+                        self.present(self.alertController, animated: true, completion: nil)
+                        
+                    }
+                })
+            }
+        }
     }
     
     

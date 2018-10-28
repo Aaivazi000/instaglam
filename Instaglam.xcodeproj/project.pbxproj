@@ -10,6 +10,8 @@
 		4BEC7898EF19870F43EEBDD8 /* Pods_Instaglam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E98F160EBB70D3EA66A5CE /* Pods_Instaglam.framework */; };
 		94419D319905828317CCAEB2 /* Pods_InstaglamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AB800153398676B5F785FB /* Pods_InstaglamTests.framework */; };
 		DA97DC01009623EC1CD5429D /* Pods_InstaglamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BEE8F0CC48C6087ED4A50C /* Pods_InstaglamUITests.framework */; };
+		E612A95D218522550087F062 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612A95C218522550087F062 /* PhotoCell.swift */; };
+		E612A9622185420A0087F062 /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612A9612185420A0087F062 /* FeedDetailViewController.swift */; };
 		E650FB79217A7C9100D5DC40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650FB78217A7C9100D5DC40 /* AppDelegate.swift */; };
 		E650FB7E217A7C9100D5DC40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E650FB7C217A7C9100D5DC40 /* Main.storyboard */; };
 		E650FB80217A7C9200D5DC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E650FB7F217A7C9200D5DC40 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		A66D011DD8FCC572A8FDDC49 /* Pods-InstaglamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaglamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaglamUITests/Pods-InstaglamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1E98F160EBB70D3EA66A5CE /* Pods_Instaglam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instaglam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C96D8668E13BA7E8AFF7AD /* Pods-Instaglam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaglam.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instaglam/Pods-Instaglam.release.xcconfig"; sourceTree = "<group>"; };
+		E612A95C218522550087F062 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		E612A9612185420A0087F062 /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		E650FB75217A7C9100D5DC40 /* Instaglam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaglam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E650FB78217A7C9100D5DC40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E650FB7D217A7C9100D5DC40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E612A95E2185241F0087F062 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E612A95C218522550087F062 /* PhotoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E650FB6C217A7C9100D5DC40 = {
 			isa = PBXGroup;
 			children = (
@@ -132,13 +144,14 @@
 		E650FB77217A7C9100D5DC40 /* Instaglam */ = {
 			isa = PBXGroup;
 			children = (
+				E612A95E2185241F0087F062 /* Views */,
 				E6583363217E835600D7B579 /* View Controllers */,
 				E650FB78217A7C9100D5DC40 /* AppDelegate.swift */,
 				E650FB7C217A7C9100D5DC40 /* Main.storyboard */,
 				E650FB7F217A7C9200D5DC40 /* Assets.xcassets */,
 				E650FB81217A7C9200D5DC40 /* LaunchScreen.storyboard */,
-				E650FB84217A7C9200D5DC40 /* Info.plist */,
 				E6583368217EBE1100D7B579 /* Post.swift */,
+				E650FB84217A7C9200D5DC40 /* Info.plist */,
 			);
 			path = Instaglam;
 			sourceTree = "<group>";
@@ -168,6 +181,7 @@
 				E6DF212D217BDC2300835A67 /* LoginViewController.swift */,
 				E6583364217E836C00D7B579 /* ProfileViewController.swift */,
 				E6583366217E838300D7B579 /* CaptureViewController.swift */,
+				E612A9612185420A0087F062 /* FeedDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -349,6 +363,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instaglam/Pods-Instaglam-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -356,6 +371,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,12 +429,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E612A95D218522550087F062 /* PhotoCell.swift in Sources */,
 				E6DF212E217BDC2300835A67 /* LoginViewController.swift in Sources */,
 				E6583362217E77BA00D7B579 /* FeedViewController.swift in Sources */,
 				E6583365217E836C00D7B579 /* ProfileViewController.swift in Sources */,
 				E6583369217EBE1100D7B579 /* Post.swift in Sources */,
 				E650FB79217A7C9100D5DC40 /* AppDelegate.swift in Sources */,
 				E6583367217E838300D7B579 /* CaptureViewController.swift in Sources */,
+				E612A9622185420A0087F062 /* FeedDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
